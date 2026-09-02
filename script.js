@@ -2,6 +2,8 @@ let humanScore = 0;
 let computerScore = 0;
 let humanChoice;
 let computerChoice;
+let humanSelection;
+let computerSelection;
 
 function getHumanChoice() {
     return humanChoice = prompt("Quel est votre choix: ");
@@ -38,24 +40,29 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-let humanSelection;
-let computerSelection;
+function playGame() {
+    for(i = 0; i < 5; i++) {
+        humanSelection = getHumanChoice();
+        computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+        console.log(`Your score is: ${humanScore}\nLe computer's score is: ${computerScore}`);
+    }
+    if( humanScore > computerScore) {
+        console.log("Well done you've won the game!");
+    } else if( humanScore === computerScore) {
+            console.log("It's a tie!");
+    } else {
+            console.log("You lose the game..");
+    }
+}
 
+playGame();
+
+/*
 for(i = 0; i < 5; i++) {
     humanSelection = getHumanChoice();
     computerSelection = getComputerChoice();
     playGame();
 }
+*/
 
-function playGame() {
-    playRound(humanSelection, computerSelection);
-    console.log(`Your score is: ${humanScore}\nLe computer's score is: ${computerScore}`);
-}
-
-if( humanScore > computerScore) {
-    console.log("Well done you've won the game!");
-} else if( humanScore === computerScore) {
-    console.log("It's a tie!");
-} else {
-    console.log("You lose the game..");
-}
