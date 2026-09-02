@@ -58,11 +58,3 @@ function playGame() {
 
 playGame();
 
-/*
-for(i = 0; i < 5; i++) {
-    humanSelection = getHumanChoice();
-    computerSelection = getComputerChoice();
-    playGame();
-}
-*/
-
