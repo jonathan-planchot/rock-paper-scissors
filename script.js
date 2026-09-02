@@ -6,7 +6,7 @@ let humanSelection;
 let computerSelection;
 
 function getHumanChoice() {
-    return humanChoice = prompt("Quel est votre choix: ");
+    return humanChoice = prompt("Enter your choice (rock, paper, or scissors):");
 }
 
 function getComputerChoice() {
@@ -35,7 +35,7 @@ function playRound(humanChoice, computerChoice) {
             console.log("You've won the round!");
             return humanScore += 1;
         } else {
-        console.log("You lose the round..");
+        console.log("You lost the round..");
         return computerScore += 1;
     }
 }
@@ -52,7 +52,7 @@ function playGame() {
     } else if( humanScore === computerScore) {
             console.log("It's a tie!");
     } else {
-            console.log("You lose the game..");
+            console.log("You lost the game..");
     }
 }
 
