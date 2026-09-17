@@ -5,9 +5,17 @@ let computerChoice;
 let humanSelection;
 let computerSelection;
 
+let rockChoice = document.querySelector("#rock");
+let paperChoice = document.querySelector("#paper");
+let scissorsChoice = document.querySelector("#scissors");
+
+
+
+/*
 function getHumanChoice() {
     return humanChoice = prompt("Enter your choice (rock, paper, or scissors):");
 }
+*/
 
 function getComputerChoice() {
     let randomNumber = Math.random() * 100;
@@ -23,7 +31,9 @@ function getComputerChoice() {
 function playRound(humanChoice, computerChoice) {
     const humanChoiceUpper = humanChoice.toUpperCase();
     const computerChoiceUpper = computerChoice.toUpperCase();
-
+    console.log(humanChoiceUpper);
+    console.log(computerChoiceUpper);
+    
     if (humanChoiceUpper === computerChoiceUpper) {
         console.log("It's a draw!");
         return;
@@ -40,6 +50,17 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
+function selectChoiceEvent(event) {
+    let humanChoice = event.target.textContent;
+    let computerChoice = getComputerChoice();
+    return playRound(humanChoice, computerChoice);
+}
+
+rockChoice.addEventListener("click", selectChoiceEvent);
+paperChoice.addEventListener("click", selectChoiceEvent);
+scissorsChoice.addEventListener("click", selectChoiceEvent);
+
+/*
 function playGame() {
     for(i = 0; i < 5; i++) {
         humanSelection = getHumanChoice();
@@ -57,4 +78,4 @@ function playGame() {
 }
 
 playGame();
-
+*/
